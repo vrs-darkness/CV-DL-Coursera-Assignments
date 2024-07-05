@@ -59,7 +59,7 @@ app.post('/api/users/:_id/exercises',(req,res) =>{
       '_id' : key,
       'username' : user_Data[key],
       'date' : new Date(data['date']).toDateString(),
-      'duration' : data['duration'],
+      'duration' : Number(data['duration']),
       "description" : data['description']
     })
   }
@@ -69,6 +69,29 @@ app.get('/api/users/:_id/logs?[from][&to][&limit]',(req,res)=>{
   console.log(req.params);
 })
 
+app.get('/api/users',(req,res)=>{
+  let s = [];
+  for(const i in user_Data)
+    {
+      s.push({"username":user_Data[i],"_id":i});
+    }
+  res.json(s);
+})
+app.get('/api/users/:_id/logs',(req,res)=>{
+  let key = req.params['_id']
+  let LOG = exerice[key]
+  let count = LOG.length
+  let  log = []
+  for (const i in LOG)
+    {
+      console.log(typeof(LOG[i]['date'].toDateString()));
+      log.push({"description": LOG[i]['description'],
+        "duration" : Number(LOG[i]['duration']),
+        "date" : String(LOG[i]['date'].toDateString())
+      })
+    }
+  res.json({"count":count,"log":log})
+})
 const listener = app.listen(process.env.PORT || 3000, () => {
   console.log('Your app is listening on port ' + listener.address().port)
 })
