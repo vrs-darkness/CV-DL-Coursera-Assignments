@@ -43,7 +43,7 @@ app.post('/api/shorturl',function(req,res){
       let short_url = used_url ;
       Basket[used_url] = req.body['url']
       used_url +=1
-      res.json({"url":req.body['url'],"short_url":short_url});}
+      res.json({"url":req.body['url'],"short_url":"http://localhost:"+port+"/api/shorturl/"+short_url});}
     }
   })
 })

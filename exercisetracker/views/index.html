@@ -7,6 +7,7 @@
   </head>
 
   <body>
+    <div style="display: flex; flex-direction: row;">
     <div class="container">
       <h1>Exercise tracker</h1>
       <form action="/api/users" method="post">
@@ -24,6 +25,24 @@
         <input id="date" type="text" name="date" placeholder="date (yyyy-mm-dd)" />
         <input type="submit" value="Submit" />
       </form>
+    </div>
+    <vr></vr>
+    <div class="container2">
+      <form action="/api/users/:_id/logs?[from][&to]" id="exercise-track" method="get">
+        <h1>Track Over Here</h1>
+        <label>ID</label>
+        <input type="text" placeholder="ID" id="uid">
+        <label>From Date</label>
+        <input type="date" id = 'fromdate'>
+        <label>To Date</label>
+        <input type="date" id ='todate'>
+        <label>Limit [Optional]</label>
+        <input type="int" id="lim">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    </div>
+    <div class="Info">
       <p>
         <strong>GET user's exercise log: </strong>
         <code>GET /api/users/:_id/logs?[from][&amp;to][&amp;limit]</code>
@@ -39,6 +58,16 @@
         exerciseForm.action = `/api/users/${userId}/exercises`;
 
         exerciseForm.submit();
+      });
+      const ExerciseTrack = document.getElementById("exercise-track");
+      ExerciseTrack.addEventListener("submit", () =>{
+        const userID = document.getElementById('uid').value;
+        const fromdate = document.getElementById('fromdate').value;
+        console.log(fromdate);
+        const todate = document.getElementById('todate').value;
+        const limit = document.getElementById('lim').value;
+        ExerciseTrack.action = '/api/users/' + userID + "/logs?" + fromdate + todate + limit;
+        ExerciseTrack.submit();
       });
     </script>
   </body>

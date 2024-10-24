@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  padding-left: 5%;
 }
 
 body {
@@ -56,4 +57,10 @@ code {
   font-size: 1.2em;
   background-color: #FFFEC4;
   padding: 2px;
+}
+.container2{
+  padding-top: 10%;
+}
+.Info{
+  padding-left: 20%;
 }

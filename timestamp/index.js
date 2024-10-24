@@ -1,14 +1,11 @@
-// index.js
-// where your node app starts
 
-// init project
 var express = require('express');
+const bodyParser = require('body-parser');
 var app = express();
-
-// enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
-// so that your API is remotely testable by FCC 
 var cors = require('cors');
-app.use(cors({optionsSuccessStatus: 200}));  // some legacy browsers choke on 204
+app.use(cors({optionsSuccessStatus: 200})); 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
@@ -23,10 +20,12 @@ app.get("/", function (req, res) {
 app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
-app.get("/api/:date",function(req,res){
-  if(req.params['date'])
+
+app.post("/api/date",function(req,res){
+  let info = req.body['Date']
+  if(info)
     {
-          let date = new Date(req.params['date']);
+          let date = new Date(info);
           if(date.toString() != 'Invalid Date')
             {
               res.json({'unix':date.valueOf(),'utc':date.toGMTString()});
@@ -34,8 +33,8 @@ app.get("/api/:date",function(req,res){
           else
           {
             try
-            {let date = new Date(Number(req.params['date']));
-            res.json({'unix':Number(req.params['date']) ,'utc': date.toGMTString()});
+            {let date = new Date(Number(info));
+            res.json({'unix':Number(info) ,'utc': date.toGMTString()});
             }
             catch
             {
