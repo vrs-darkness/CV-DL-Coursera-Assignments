@@ -41,6 +41,10 @@ Each service has its own directory. Navigate to the one you want to use:
   ```bash
   cd exercise-tracker
   ```
+  **Header Parser**:
+  ```bash
+  cd header-parser
+  ```
 
 ### 3. Install Dependencies
 Inside the service directory, install the required dependencies using npm:
