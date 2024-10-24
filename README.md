@@ -29,21 +29,21 @@ Each service has its own directory. Navigate to the one you want to use:
 
 - **Timestamp Validator**:
   ```bash
-  cd timestamp-validator
+  cd timestamp
   ```
 
 - **File Metadata Finder**:
   ```bash
-  cd file-metadata-finder
+  cd filemetadata
   ```
 
 - **Exercise Tracker**:
   ```bash
-  cd exercise-tracker
+  cd exercisetracker
   ```
   **Header Parser**:
   ```bash
-  cd header-parser
+  cd headerparser
   ```
 
 ### 3. Install Dependencies
