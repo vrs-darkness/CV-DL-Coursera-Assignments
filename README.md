@@ -29,7 +29,7 @@ Each service has its own directory. Navigate to the one you want to use:
 
 - **Timestamp Validator**:
   ```bash
-  cd timestampvalidator
+  cd timestamp
   ```
 
 - **File Metadata Finder**:
