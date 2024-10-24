@@ -34,7 +34,7 @@ Each service has its own directory. Navigate to the one you want to use:
 
 - **File Metadata Finder**:
   ```bash
-  cd filemetadatafinder
+  cd filemetadata
   ```
 
 - **Exercise Tracker**:
@@ -43,7 +43,7 @@ Each service has its own directory. Navigate to the one you want to use:
   ```
   **Header Parser**:
   ```bash
-  cd header-parser
+  cd headerparser
   ```
 
 ### 3. Install Dependencies
