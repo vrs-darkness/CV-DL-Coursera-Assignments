@@ -50,14 +50,14 @@ Each service has its own directory. Navigate to the one you want to use:
 Inside the service directory, install the required dependencies using npm:
 
 ```bash
-npm install
+npm i
 ```
 
 ### 4. Start the Server
 After installing dependencies, start the server:
 
 ```bash
-node server.js
+node index.js
 ```
 
 The server will start running on the default port (usually `http://localhost:3000`).
