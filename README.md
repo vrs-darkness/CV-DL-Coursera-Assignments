@@ -7,6 +7,7 @@ This repository contains multiple micro-services templates that can be easily cl
 2. **Timestamp Validator**: Validate and parse timestamps in various formats.
 3. **File Metadata Finder**: Extract metadata (size, type, etc.) from uploaded files.
 4. **Exercise Tracker**: Track exercises with user data, including duration, type, and timestamps.
+5. **Header Parser**: Gives us the details about the user who gives requests.
 
 ## Setup Instructions
 
